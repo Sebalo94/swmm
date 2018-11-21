@@ -1,0 +1,243 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.1 (Build 5.2.0.dev1)
+  --------------------------------------------------------------
+
+  Tutorial Example 
+  
+  
+  *********************
+  Rainfall File Summary
+  *********************
+  Station    First        Last         Recording   Periods    Periods    Periods
+  ID         Date         Date         Frequency  w/Precip    Missing    Malfunc.
+  -------------------------------------------------------------------------------
+  310301     01/06/1998   01/31/2000      60 min      1131          0          0
+
+  
+  *********************************************************
+  NOTE: The summary statistics displayed in this report are
+  based on results found at every computational time step,  
+  not just on results from each reporting time step.
+  *********************************************************
+  
+  ****************
+  Analysis Options
+  ****************
+  Flow Units ............... CFS
+  Process Models:
+    Rainfall/Runoff ........ YES
+    RDII ................... NO
+    Snowmelt ............... NO
+    Groundwater ............ NO
+    Flow Routing ........... YES
+    Ponding Allowed ........ NO
+    Water Quality .......... YES
+  Infiltration Method ...... GREEN_AMPT
+  Flow Routing Method ...... KINWAVE
+  Starting Date ............ 01/01/1998 00:00:00
+  Ending Date .............. 02/01/1998 12:00:00
+  Antecedent Dry Days ...... 5.0
+  Report Time Step ......... 01:00:00
+  Wet Time Step ............ 00:05:00
+  Dry Time Step ............ 01:00:00
+  Routing Time Step ........ 300.00 sec
+  
+  
+  **************************        Volume         Depth
+  Runoff Quantity Continuity     acre-feet        inches
+  **************************     ---------       -------
+  Total Precipitation ......         7.560         7.560
+  Evaporation Loss .........         0.000         0.000
+  Infiltration Loss ........         4.410         4.410
+  Surface Runoff ...........         3.136         3.136
+  Final Storage ............         0.016         0.016
+  Continuity Error (%) .....        -0.022
+  
+  
+  **************************           TSS          Lead
+  Runoff Quality Continuity            lbs           lbs
+  **************************    ----------    ----------
+  Initial Buildup ..........        47.500         0.000
+  Surface Buildup ..........       258.977         0.066
+  Wet Deposition ...........         0.000         0.000
+  Sweeping Removal .........         0.000         0.000
+  Infiltration Loss ........         0.000         0.000
+  BMP Removal ..............         0.000         0.000
+  Surface Runoff ...........       262.642         0.066
+  Remaining Buildup ........        43.835         0.000
+  Continuity Error (%) .....         0.000         0.000
+  
+  
+  **************************        Volume        Volume
+  Flow Routing Continuity        acre-feet      10^6 gal
+  **************************     ---------     ---------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......         3.136         1.022
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........         3.130         1.020
+  Flooding Loss ............         0.000         0.000
+  Evaporation Loss .........         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Initial Stored Volume ....         0.000         0.000
+  Final Stored Volume ......         0.000         0.000
+  Continuity Error (%) .....         0.204
+  
+  
+  **************************           TSS          Lead
+  Quality Routing Continuity           lbs           lbs
+  **************************    ----------    ----------
+  Dry Weather Inflow .......         0.000         0.000
+  Wet Weather Inflow .......       262.642         0.066
+  Groundwater Inflow .......         0.000         0.000
+  RDII Inflow ..............         0.000         0.000
+  External Inflow ..........         0.000         0.000
+  External Outflow .........       276.546         0.069
+  Flooding Loss ............         0.000         0.000
+  Exfiltration Loss ........         0.000         0.000
+  Mass Reacted .............         0.000         0.000
+  Initial Stored Mass ......         0.000         0.000
+  Final Stored Mass ........         0.000         0.000
+  Continuity Error (%) .....        -5.294        -5.294
+  
+  
+  ********************************
+  Highest Flow Instability Indexes
+  ********************************
+  All links are stable.
+  
+  
+  *************************
+  Routing Time Step Summary
+  *************************
+  Minimum Time Step           :   300.00 sec
+  Average Time Step           :   300.00 sec
+  Maximum Time Step           :   300.00 sec
+  Percent in Steady State     :     0.00
+  Average Iterations per Step :     1.16
+  Percent Not Converging      :     0.00
+  
+  
+  ***************************
+  Subcatchment Runoff Summary
+  ***************************
+  
+  --------------------------------------------------------------------------------------------------------
+                            Total      Total      Total      Total      Total       Total     Peak  Runoff
+                           Precip      Runon       Evap      Infil     Runoff      Runoff   Runoff   Coeff
+  Subcatchment                 in         in         in         in         in    10^6 gal      CFS
+  --------------------------------------------------------------------------------------------------------
+  S1                         7.56       0.00       0.00       3.78       3.76        0.41     1.01   0.498
+  S2                         7.56       0.00       0.00       3.78       3.76        0.41     1.01   0.498
+  S3                         7.56       0.00       0.00       5.67       1.88        0.20     0.50   0.249
+  
+  
+  ****************************
+  Subcatchment Washoff Summary
+  ****************************
+  
+  ------------------------------------------------
+                                 TSS          Lead
+  Subcatchment                   lbs           lbs
+  ------------------------------------------------
+  S1                          96.469         0.024
+  S2                          96.469         0.024
+  S3                          69.705         0.017
+  ------------------------------------------------
+  System                     262.642         0.066
+  
+  
+  ******************
+  Node Depth Summary
+  ******************
+  
+  ---------------------------------------------------------------------------------
+                                 Average  Maximum  Maximum  Time of Max    Reported
+                                   Depth    Depth      HGL   Occurrence   Max Depth
+  Node                 Type         Feet     Feet     Feet  days hr:min        Feet
+  ---------------------------------------------------------------------------------
+  J1                   JUNCTION     0.01     0.29    96.29     6  21:05        0.29
+  J2                   JUNCTION     0.03     0.57    90.57     6  21:05        0.57
+  J3                   JUNCTION     0.01     0.21    93.21     6  21:05        0.21
+  J4                   JUNCTION     0.03     0.57    88.57     6  21:05        0.57
+  Out1                 OUTFALL      0.02     0.47    85.47     6  21:05        0.47
+  
+  
+  *******************
+  Node Inflow Summary
+  *******************
+  
+  -------------------------------------------------------------------------------------------------
+                                  Maximum  Maximum                  Lateral       Total        Flow
+                                  Lateral    Total  Time of Max      Inflow      Inflow     Balance
+                                   Inflow   Inflow   Occurrence      Volume      Volume       Error
+  Node                 Type           CFS      CFS  days hr:min    10^6 gal    10^6 gal     Percent
+  -------------------------------------------------------------------------------------------------
+  J1                   JUNCTION      1.01     1.01     6  21:05       0.409       0.409       0.000
+  J2                   JUNCTION      1.01     2.02     6  21:05       0.409       0.817       0.000
+  J3                   JUNCTION      0.50     0.50     6  21:05       0.204       0.204       0.000
+  J4                   JUNCTION      0.00     2.52     6  21:05           0        1.02      -0.000
+  Out1                 OUTFALL       0.00     2.52     6  21:05           0        1.02       0.000
+  
+  
+  *********************
+  Node Flooding Summary
+  *********************
+  
+  No nodes were flooded.
+  
+  
+  ***********************
+  Outfall Loading Summary
+  ***********************
+  
+  ---------------------------------------------------------------------------------------
+                         Flow       Avg       Max       Total         Total         Total
+                         Freq      Flow      Flow      Volume           TSS          Lead
+  Outfall Node           Pcnt       CFS       CFS    10^6 gal           lbs           lbs
+  ---------------------------------------------------------------------------------------
+  Out1                  17.76      0.28      2.52       1.020       276.546         0.069
+  ---------------------------------------------------------------------------------------
+  System                17.76      0.28      2.52       1.020       276.546         0.069
+  
+  
+  ********************
+  Link Flow Summary
+  ********************
+  
+  -----------------------------------------------------------------------------
+                                 Maximum  Time of Max   Maximum    Max/    Max/
+                                  |Flow|   Occurrence   |Veloc|    Full    Full
+  Link                 Type          CFS  days hr:min    ft/sec    Flow   Depth
+  -----------------------------------------------------------------------------
+  C1                   CONDUIT      1.01     6  21:05      5.45    0.18    0.29
+  C2                   CONDUIT      2.02     6  21:05      4.38    0.62    0.57
+  C3                   CONDUIT      0.50     6  20:50      4.19    0.10    0.21
+  C4                   CONDUIT      2.52     6  21:05      5.32    0.21    0.31
+  
+  
+  *************************
+  Conduit Surcharge Summary
+  *************************
+  
+  No conduits were surcharged.
+  
+  
+  ***************************
+  Link Pollutant Load Summary
+  ***************************
+  
+  ------------------------------------------------
+                                 TSS          Lead
+  Link                           lbs           lbs
+  ------------------------------------------------
+  C1                          99.026         0.025
+  C2                         200.565         0.050
+  C3                          70.294         0.018
+  C4                         276.546         0.069
+  
+
+  Analysis begun on:  Tue Oct 09 15:14:40 2018
+  Analysis ended on:  Tue Oct 09 15:14:40 2018
+  Total elapsed time: < 1 sec

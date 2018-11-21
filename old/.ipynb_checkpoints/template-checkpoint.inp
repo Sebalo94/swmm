@@ -1,0 +1,255 @@
+[TITLE]
+;;Project Title/Notes
+Template input file for Gottesacker model. 
+Use with Python script to replace placeholders.
+Based on Zhao Chen's work (Chen et al. 2018 HESS)
+Author: Chloe Fandel
+
+[OPTIONS]
+;;Option             Value
+;;-----------------  -----------
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         ELEVATION
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           11/14/2013
+START_TIME           00:00:00
+REPORT_START_DATE    11/15/2013
+REPORT_START_TIME    00:00:00
+END_DATE             10/11/2014
+END_TIME             00:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          01:00:00
+WET_STEP             00:30:00
+DRY_STEP             01:00:00
+ROUTING_STEP         0:00:30 
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  D-W
+VARIABLE_STEP        1.00
+LENGTHENING_STEP     0
+MIN_SURFAREA         0
+NORMAL_FLOW_LIMITED  BOTH
+MAX_TRIALS           8
+HEAD_TOLERANCE       0.005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              1
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;               Rain      Time   Snow   Data
+;;Name           type      Intrvl CatchF Source    
+;;-------------- --------- ------ ------ ----------
+1                VOLUME    1:00   1.0    TIMESERIES Rainfall1
+2                VOLUME    1:00   1.0    TIMESERIES Rainfall2
+3                VOLUME    1:00   1.0    TIMESERIES Rainfall3
+4                VOLUME    1:00   1.0    TIMESERIES Rainfall4
+5                VOLUME    1:00   1.0    TIMESERIES Rainfall5
+6                VOLUME    1:00   1.0    TIMESERIES Rainfall6
+7                VOLUME    1:00   1.0    TIMESERIES Rainfall7
+8                VOLUME    1:00   1.0    TIMESERIES Rainfall8
+9                VOLUME    1:00   1.0    TIMESERIES Rainfall9
+10               VOLUME    1:00   1.0    TIMESERIES Rainfall10
+11               VOLUME    1:00   1.0    TIMESERIES Rainfall11
+12               VOLUME    1:00   1.0    TIMESERIES Rainfall12
+13               VOLUME    1:00   1.0    TIMESERIES Rainfall13
+14               VOLUME    1:00   1.0    TIMESERIES Rainfall14
+15               VOLUME    1:00   1.0    TIMESERIES Rainfall15
+16               VOLUME    1:00   1.0    TIMESERIES Rainfall16
+17               VOLUME    1:00   1.0    TIMESERIES Rainfall17
+18               VOLUME    1:00   1.0    TIMESERIES Rainfall18
+19               VOLUME    1:00   1.0    TIMESERIES Rainfall19
+20               VOLUME    1:00   1.0    TIMESERIES Rainfall20
+21               VOLUME    1:00   1.0    TIMESERIES Rainfall21
+22               VOLUME    1:00   1.0    TIMESERIES Rainfall22
+23               VOLUME    1:00   1.0    TIMESERIES Rainfall23
+24               VOLUME    1:00   1.0    TIMESERIES Rainfall24
+25               VOLUME    1:00   1.0    TIMESERIES Rainfall25
+26               VOLUME    1:00   1.0    TIMESERIES Rainfall26
+27               VOLUME    1:00   1.0    TIMESERIES Rainfall27
+28               VOLUME    1:00   1.0    TIMESERIES Rainfall28
+29               VOLUME    1:00   1.0    TIMESERIES Rainfall29          
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
+1                1                1016             33       100      958.5666 0.25     0
+2                2                1017             129.18   100      958.5666 0.25     0
+3                3                1018             140.52   100      958.5666 0.25     0
+4                4                1019             100.51   100      958.5666 0.25     0
+5                5                1020             17.82    100      958.5666 0.25     0
+6                6                1011             191.41   100      1500     0.25     0
+7                7                1012             235.03   100      1500     0.25     0
+8                8                1013             192.8    100      1500     0.25     0
+9                9                1014             193.21   100      1500     0.25     0
+10               10               1015             133.94   100      1500     0.25     0
+11               11               1006             33.08    100      1007.5408 0.25    0
+12               12               1007             185.55   100      1007.5408 0.25    0
+13               13               1008             101.54   100      1007.5408 0.25    0
+14               14               1009             91.71    100      1007.5408 0.25    0
+15               15               1010             114.49   100      1007.5408 0.25    0
+16               16               1001             29.95    100      421.4552 0.25     0
+17               17               1002             173.34   100      421.4552 0.25     0
+18               18               1003             173.1    100      421.4552 0.25     0
+19               19               1004             110.36   100      421.4552 0.25     0
+20               20               1005             77.75    100      421.4552 0.25     0
+21               21               1034             103.68   100      100      0.25     0
+22               22               1035             258.68   100      100      0.25     0
+23               23               1040             159.74   100      100      0.25     0
+24               24               1041             24.22    100      100      0.25     0
+25               25               1036             16.29    100      100      0.25     0
+26               26               1037             74.98    100      100      0.25     0
+27               27               1038             112.33   100      100      0.25     0
+28               28               1043             150.29   100      100      0.25     0
+29               29               1044             10.59    100      100      0.25     0                       
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
+;;-------------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+1                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+2                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+3                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+4                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+5                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+6                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+7                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+8                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+9                0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+10               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+11               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+12               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+13               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+14               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+15               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+16               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+17               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+18               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+19               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+20               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+21               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+22               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+23               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+24               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+25               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+26               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+27               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+28               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100
+29               0.2        0.1        0.15       0.05       100        IMPERVIOUS 100    
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+;;-------------- ---------- ---------- ---------- ---------- ----------
+1                3          0.5        4          7          0         
+2                3          0.5        4          7          0         
+3                3          0.5        4          7          0         
+4                3          0.5        4          7          0         
+5                3          0.5        4          7          0         
+6                3          0.5        4          7          0         
+7                3          0.5        4          7          0         
+8                3          0.5        4          7          0         
+9                3          0.5        4          7          0         
+10               3          0.5        4          7          0         
+11               3          0.5        4          7          0         
+12               3          0.5        4          7          0         
+13               3          0.5        4          7          0         
+14               3          0.5        4          7          0         
+15               3          0.5        4          7          0         
+16               3          0.5        4          7          0         
+17               3          0.5        4          7          0         
+18               3          0.5        4          7          0         
+19               3          0.5        4          7          0         
+20               3          0.5        4          7          0         
+21               3          0.5        4          7          0         
+22               3          0.5        4          7          0         
+23               3          0.5        4          7          0         
+24               3          0.5        4          7          0         
+25               3          0.5        4          7          0         
+26               3          0.5        4          7          0         
+27               3          0.5        4          7          0         
+28               3          0.5        4          7          0         
+29               3          0.5        4          7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+;;-------------- ---------- ---------- ---------- ---------- ----------
+junctions
+
+[OUTFALLS]
+;;Name           Elev       Type       Tseries          Gated            
+;;-------------- ---------- ---------- ---------------- -------- 
+outfalls
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+conduits
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+xsections
+
+[LOSSES]
+;;Link           Inlet      Outlet     Average    Flap Gate 
+;;-------------- ---------- ---------- ---------- ----------
+losses
+
+[INFLOWS]
+;;                                                 Param    Units    Scale    Baseline Baseline
+;;Node           Parameter        Time Series      Type     Factor   Factor   Value    Pattern
+;;-------------- ---------------- ---------------- -------- -------- -------- -------- --------
+inflows      
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
+timeseries
+
+[REPORT]
+;;Reporting Options
+INPUT         NO
+CONTROLS      NO
+SUBCATCHMENTS NONE
+NODES         3001 3002 3003 3005
+LINKS         2036 2035 2033 2034 2047 2048 2049 2050 2051 2052
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 578728.850 5239974.270 591651.126 5249647.456
+Units      Meters
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+coordinates
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+vertices
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+polygons
+
+[SYMBOLS]
+;;Gage           X-Coord            Y-Coord           
+;;-------------- ------------------ ------------------
+symbols          
+
