@@ -1,0 +1,12 @@
+#Discretization file - Project 1
+#Units: feet (1) and seconds (1)
+#	Nlay	 Nrow	  Ncol	    Nper	 tUnit	Lunit
+         2        12        20         1         1         1
+  1  0
+CONSTANT  5280.0      DELR
+CONSTANT  5280.0      DELC
+CONSTANT  3800.0      Top of system
+CONSTANT  3500.0      Bottom of layer 1
+CONSTANT  3490.0      Bottom of confining layer
+CONSTANT  2990.0      Bottom of bottom layer
+172800    1    1    SS    PerLen, Nstep, TsMult, SS/Tr
