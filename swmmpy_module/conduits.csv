@@ -1,0 +1,6 @@
+Conduit Data,,,,,,,,
+Name,FromNod,To Node,Length,Roughness,InOffset,OutOffset,InitFlow,MaxFlow
+C1,J1,J2,400,0.01,0,0,0,0
+C2,J2,J4,400,0.01,0,0,0,0
+C3,J3,J4,400,0.01,0,0,0,0
+C4,J4,Out1,400,0.01,0,0,0,0
