@@ -12,7 +12,7 @@ See accompanying notebook for examples of how to use.'''
 ########################################################################################
 import pandas as pd
 import numpy as np
-import subprocess
+import subprocess as sp
 
 
 #########################################################################################
@@ -28,7 +28,7 @@ def import_template(template_filename='template.inp'):
     Outputs:
     template:          pandas dataframe of the template file, with one column, and a line for each line of text.'''
     
-    template =   pd.read_csv(template_filename, header=None, skip_blank_lines=False) #import template .inp file to dataframe
+    template = pd.read_csv(template_filename, header=None, skip_blank_lines=False)  #import template .inp file to dataframe
     
     return template
 
@@ -46,7 +46,7 @@ def import_data(data_filename):
     Outputs:
     template:          pandas dataframe of the data file, with columns, and a line for each item'''
     
-    data =  pd.read_csv(data_filename,     header=1)                            #import data to dataframe that has separate columns
+    data = pd.read_csv(data_filename, header=1)    #import data to dataframe that has separate columns
     
     return data
 
@@ -73,7 +73,7 @@ def insert_data(template, placeholder, data, show=False):
     '''
     
     #Get row index and location of placeholder:
-    ind = template.index[template[0]==placeholder]                  #df.index gets the index, df[0] looks in column 0 (returns an index object not just the name)
+    ind = template.index[template[0]==placeholder]              #df.index gets the index, df[0] looks in column 0 (returns an index object not just the name)
     loc = template.index.get_loc(ind[0])                        #get the integer position of the index specified (need to select first item (index name) in index object)
 
     #Convert data to formatted line strings:
@@ -90,7 +90,8 @@ def insert_data(template, placeholder, data, show=False):
     data_strings = pd.DataFrame(columns=[0])            #create empty dataframe to fill
     for ind in data.index:                              #loop over lines of data
         dl = data.loc[ind].tolist()                     #get line of data to be formatted
-        dl[0] = int(dl[0])                              #make sure name column is an integer not a float (WHY is this not automatic?)
+        if type(dl[0])!=type('str'):                    #if name isn't a string
+            dl[0] = int(dl[0])                          #make sure name column is an integer not a float (WHY is this not automatic?)
         line = form.format(d=dl)                        #insert each item in list into format string
         data_strings.loc[ind] = line                    #insert line string into new dataframe
 
@@ -130,7 +131,7 @@ def write_input(inputfile, placeholders, data_filenames, template_filename='temp
     for i in range(len(placeholders)):                                          #loop over list of placeholders
         data = import_data(data_filenames[i])                                   #import data to insert from csv
         template = insert_data(template,  placeholders[i], data)                #replace placeholder string with data
-    template.to_csv(inputfile, header=False, index=False)                       #write dataframe to .inp text file with specified name
+    template.to_csv(inputfile, header=False, index=False, quoting=3)            #write dataframe to .inp text file with specified name
         
 
 #########################################################################################
@@ -149,7 +150,8 @@ def run(inputfile, reportfile, outputfile, exe='swmm5.exe'):
     project.out: SWMM output file
     '''
     
-    p = subprocess.Popen([exe, inputfile, reportfile, outputfile], stdout=subprocess.PIPE, universal_newlines=True)          #run SWMM (and report process output)
+    p = sp.Popen([exe, inputfile, reportfile, outputfile], stdout=sp.PIPE, universal_newlines=True)          #run SWMM (and report process output)
     for line in p.stdout:          #for each line of process output
         if 'hour' not in line:     #if the line doesn't include the string 'hour' (to avoid a huge mass of text for each timestep)
-            print(line)         
+            print(line) 
+    

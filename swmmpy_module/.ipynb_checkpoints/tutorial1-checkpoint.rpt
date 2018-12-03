@@ -1,0 +1,29 @@
+
+  EPA STORM WATER MANAGEMENT MODEL - VERSION 5.0 (Build 5.0.022)
+  --------------------------------------------------------------
+
+  
+  ERROR 205: invalid keyword RULE_STEP at line 30 of [OPTION] section:
+  RULE_STEP
+  
+  ERROR 205: invalid keyword MAX_TRIALS at line 38 of [OPTION] section:
+  MAX_TRIALS
+  
+  ERROR 205: invalid keyword HEAD_TOLERANCE at line 39 of [OPTION] section:
+  HEAD_TOLERANCE
+  
+  ERROR 205: invalid keyword SYS_FLOW_TOL at line 40 of [OPTION] section:
+  SYS_FLOW_TOL
+  
+  ERROR 205: invalid keyword LAT_FLOW_TOL at line 41 of [OPTION] section:
+  LAT_FLOW_TOL
+  
+  ERROR 205: invalid keyword MINIMUM_STEP at line 42 of [OPTION] section:
+  MINIMUM_STEP
+  
+  ERROR 205: invalid keyword THREADS at line 43 of [OPTION] section:
+  THREADS
+
+  Analysis begun on:  Fri Nov 30 15:50:41 2018
+  Analysis ended on:  Fri Nov 30 15:50:41 2018
+  Total elapsed time: < 1 sec

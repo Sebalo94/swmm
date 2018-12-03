@@ -1,6 +1,8 @@
 [TITLE]
 ;;Project Title/Notes
 Tutorial Example
+-
+-
 
 [OPTIONS]
 ;;Option             Value
@@ -49,7 +51,7 @@ DRY_ONLY         NO
 [RAINGAGES]
 ;;Name           Format    Interval SCF      Source    
 ;;-------------- --------- ------ ------ ----------
-Gage1            INTENSITY 1:00     1.0      FILE       "C:\Users\Chloe\My Documents\EPA SWMM Projects\Examples\sta310301.dat" 310301     IN   
+Gage1            INTENSITY 1:00     1.0      FILE       "C:\Users\Chloe\Documents\SWMM\Examples\sta310301.dat" 310301     IN   
 
 [SUBCATCHMENTS]
 ;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
