@@ -1,4 +1,4 @@
-Conduit Data,,,,,,,,
+[CONDUITS],,,,,,,,
 Name,InNode,OutNode,Length,ManningN,InOffset,OutOffset,InitFlow,MaxFlow
 2001,1001,1002,486.92,0.01,*,*,0,0
 2002,1002,1003,486.93,0.01,*,*,0,0
