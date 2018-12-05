@@ -46,7 +46,7 @@ def import_data(data_filename):
     Outputs:
     template:          pandas dataframe of the data file, with columns, and a line for each item'''
     
-    data = pd.read_csv(data_filename, header=1)    #import data to dataframe that has separate columns
+    data = pd.read_csv(data_filename, header=1, na_filter=False)    #import data to dataframe that has separate columns
     
     return data
 
@@ -112,7 +112,7 @@ def insert_data(template, placeholder, data, show=False):
 
 #########################################################################################
 
-def write_input(inputfile, placeholders, data_filenames, template_filename='template.inp'):
+def write_input_from_csv(inputfile, placeholders, data_filenames, template_filename='template.inp'):
     
     '''Write a SWMM input file using a template.inp file with placeholders in each sections,
     and data.csv files for each section of data. The placeholders will be replaced with data.
@@ -131,6 +131,31 @@ def write_input(inputfile, placeholders, data_filenames, template_filename='temp
     for i in range(len(placeholders)):                                          #loop over list of placeholders
         data = import_data(data_filenames[i])                                   #import data to insert from csv
         template = insert_data(template,  placeholders[i], data)                #replace placeholder string with data
+    template.to_csv(inputfile, header=False, index=False, quoting=3)            #write dataframe to .inp text file with specified name
+        
+
+#########################################################################################
+
+def write_input(inputfile, placeholders, data, template_filename='template.inp'):
+    
+    '''Write a SWMM input file using a template.inp file with placeholders in each sections,
+    and pandas dataframes holding the data to be inserted for each section. 
+    The placeholders will be replaced with data.
+    Section order must be the same in placeholders and data.
+    
+    Inputs:
+    inputfile:           string for name of input file to write (must end in .inp). Example: project.inp
+    placeholders:        list of placeholder strings to be replaced with data. Ex: ['junctions', 'conduits']
+    data:                list of dataframes to be inserted (obtained using import_data())
+    template_filename:   string for name of template file (defaults to 'template.inp')
+    
+    Outputs:
+    project.inp:         SWMM5 input text file
+    '''
+    
+    template = import_template(template_filename)                               #import template file from txt
+    for i in range(len(placeholders)):                                          #loop over list of placeholders
+        template = insert_data(template,  placeholders[i], data[i])             #replace placeholder string with data
     template.to_csv(inputfile, header=False, index=False, quoting=3)            #write dataframe to .inp text file with specified name
         
 
