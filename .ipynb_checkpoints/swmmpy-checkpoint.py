@@ -86,7 +86,7 @@ def insert_data(template, placeholder, data, show=False):
     form = ''.join(form)                                        #join format strings into one for entire row
 
     #Insert values into format string
-    data = data.round(6)                                #round data to 6 decimal places (to correct for artifacts caused by binary/float conversions)
+    data = data.round(5)                                #round data to 6 decimal places (to correct for artifacts caused by binary/float conversions)
     data_strings = pd.DataFrame(columns=[0])            #create empty dataframe to fill
     for ind in data.index:                              #loop over lines of data
         dl = data.loc[ind].tolist()                     #get line of data to be formatted
